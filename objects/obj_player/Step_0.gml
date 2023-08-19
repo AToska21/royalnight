@@ -16,12 +16,12 @@ if (mvtLocked <= 0) {
 	
 	if (jump) {
 		if (onTheGround) {
-			ySpeed = -15;
+			ySpeed = -18;
 		}
 	
 		if (onAWall != 0) {
 			ySpeed = -15
-			xSpeed = onAWall * spd;
+			xSpeed = onAWall * spd * 2;
 			mvtLocked = 10;
 		}
 	}
@@ -58,9 +58,7 @@ if (place_meeting(x, y-2, obj_player)) {
 	score += 1;
 }
 if (onTheGround) {
-	if (debug_mode == true) {
-		room_goto(rm_lvlmoon)
-	}
+	
 } else if (onAWall != 0) {
 	image_xscale = onAWall;
 }
@@ -70,6 +68,15 @@ if (onTheGroundAgain) {
 		room_goto(rm_lvlmoon)
 	}
 }
+
+if (!onTheGround) {
+	sprite_index = spr_player_jump;
+} else if (xSpeed == 0) {
+	sprite_index = spr_player_idle;
+} else {
+	sprite_index = spr_player_walk;
+}
+
 
 if (place_meeting(x + xSpeed, y, obj_blocktop)) {
 	while (!place_meeting(x + sign(xSpeed), y, obj_blocktop)) {

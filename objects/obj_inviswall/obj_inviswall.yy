@@ -9,7 +9,10 @@
     "name": "Objects",
     "path": "folders/Objects.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_blocktop",
+    "path": "objects/obj_blocktop/obj_blocktop.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -31,8 +34,8 @@
   "properties": [],
   "solid": true,
   "spriteId": {
-    "name": "spr_blocktop",
-    "path": "sprites/spr_blocktop/spr_blocktop.yy",
+    "name": "spr_inviswall",
+    "path": "sprites/spr_inviswall/spr_inviswall.yy",
   },
   "spriteMaskId": null,
   "visible": true,
